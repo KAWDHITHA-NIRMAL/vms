@@ -1,0 +1,43 @@
+HOPINGBOYZ LICENSE (HBYZ-MIT+ 2026)
+
+Copyright © 2026 Hopingboyz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software under the conditions below.
+
+Allowed actions (you may)
+
+✅ Use — run the Software for any purpose.
+
+✅ Modify — create derivative works.
+
+✅ Merge — combine the Software with other software.
+
+✅ Publish — publicly share the Software or derivative works.
+
+✅ Distribute — redistribute copies or modified versions.
+
+✅ Sublicense — grant others rights under terms you set.
+
+✅ Sell — commercialize the Software.
+
+Required conditions
+
+Retain attribution. The above copyright notice, this permission notice, and any prominent credits (such as in the UI, documentation, or README) must be included in all copies or substantial portions of the Software.
+
+Document changes. Any modified or derivative version must be clearly marked as modified and must include a short changelog (what was changed, author, and date).
+
+Third-party code respect. You must not include or redistribute third-party code that you do not have the right to use. If your distribution includes third-party code, you must clearly identify that code and include its license/permission. (In short: do not copy other people’s code without permission.)
+
+No false endorsement. The Software may not be presented as officially endorsed by Hopingboyz, DragonLabs, or other contributors unless you have written permission.
+
+Optional / additional clauses
+
+Patent grant (optional). Contributors grant a perpetual, worldwide, non-exclusive license to any patents they own that are necessary to use or distribute their contribution to the Software.
+
+Trademark protection. The names “Hopingboyz”, “DragonLabs”, and other project trademarks are reserved. Use of trademarks requires written permission.
+
+Ethical use recommendation. Use of the Software for illegal, harmful, or unethical ends is discouraged and not endorsed by the authors. This recommendation does not create liability but reflects the project’s stance.
+
+Disclaimer & limitation of liability
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS, HOPINGBOYZ, DRAGONLABS, OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
