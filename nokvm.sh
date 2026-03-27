@@ -10,6 +10,13 @@ if ! command -v qemu-system-x86_64 &> /dev/null || ! command -v cloud-localds &>
     fi
 fi
 
+# Ensure screen works correctly in restricted environments (like IDX/Nix)
+export SCREENDIR="$HOME/.screen"
+if [[ ! -d "$SCREENDIR" ]]; then
+    mkdir -p "$SCREENDIR"
+    chmod 700 "$SCREENDIR"
+fi
+
 # =============================
 # Enhanced Multi-VM Manager
 # =============================
@@ -425,6 +432,11 @@ EOF
     fi
     
     print_status "SUCCESS" "VM '$VM_NAME' created successfully."
+    
+    # Auto-start and auto-console as per user request
+    print_status "INFO" "Auto-starting VM and attaching to console..."
+    start_vm "$VM_NAME"
+    show_vps_log "$VM_NAME"
 }
 
 # Function to start a VM
@@ -653,21 +665,31 @@ show_vm_info() {
 # Function to check if VM is running
 is_vm_running() {
     local vm_name=$1
-    if screen -list | grep -q "\.vm_$vm_name\b"; then
-        return 0
-    else
-        return 1
+    # Check screen list comprehensively
+    if [[ -d "$SCREENDIR" ]]; then
+        screen -ls | grep -q "\.vm_$vm_name\s" && return 0
     fi
+    return 1
 }
 
 # Function to show VM terminal log
 show_vps_log() {
     local vm_name=$1
+    local log_file="$VM_DIR/$vm_name.log"
+    
     if is_vm_running "$vm_name"; then
         print_status "INFO" "Attaching to VM terminal. Press Ctrl+A followed by D to detach."
-        screen -x "vm_$vm_name"
+        sleep 1
+        # Force a simple terminal type for maximum screen compatibility
+        TERM=xterm screen -dr "vm_$vm_name" || screen -x "vm_$vm_name"
     else
-        print_status "ERROR" "VM $vm_name is not running."
+        print_status "ERROR" "VM $vm_name is not running in a screen session."
+        if [[ -f "$log_file" ]]; then
+            print_status "INFO" "Showing last 20 lines of log ($log_file):"
+            echo "=========================================="
+            tail -n 20 "$log_file"
+            echo "=========================================="
+        fi
     fi
 }
 
